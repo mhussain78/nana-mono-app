@@ -10,7 +10,7 @@ services:
     volumes:
       - mongo-data:/data/db
   nana-mongo-app:
-    image: mhussain78/nana-mongo-app:0.0.2
+    image: mhussain78/nana-mongo-app:0.0.3
     ports:
       - 8088:8080
     environment:
