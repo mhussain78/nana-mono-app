@@ -14,6 +14,11 @@ public class CreateUserAccountService implements InitializingBean {
 
     @Override
     public void afterPropertiesSet() throws Exception {
+        if (userAccountRepository.count() > 0) {
+            log.info("Database contains user accounts already");
+            return;
+        }
+
         userAccountRepository.deleteAll();
         for (int i = 0; i < 100; i++) {
             var account = new UserAccount();
